@@ -1,0 +1,38 @@
+<!-- HTML structure for a profile card -->
+<div class="profile-card">
+    <img src="profile-image.jpg" alt="Profile Image">
+    <h2>Name</h2>
+    <p>Brief Description</p>
+    <button class="summary-button">Summary</button>
+</div>
+
+<!-- JavaScript to fetch and populate profile data -->
+<script>
+    // Simulated profile data
+    const profiles = [
+        { name: "John Doe", description: "Front-end Developer", address: "123 Main St" },
+        // Add more profiles here
+    ];
+
+    // Function to create and populate profile cards
+    function createProfileCards() {
+        const profilesContainer = document.getElementById("profiles-container");
+        
+        profiles.forEach(profile => {
+            const card = document.createElement("div");
+            card.classList.add("profile-card");
+            
+            card.innerHTML = `
+                <img src="profile-image.jpg" alt="Profile Image">
+                <h2>${profile.name}</h2>
+                <p>${profile.description}</p>
+                <button class="summary-button" data-address="${profile.address}">Summary</button>
+            `;
+            
+            profilesContainer.appendChild(card);
+        });
+    }
+
+    // Call the function to create profile cards
+    createProfileCards();
+</script
